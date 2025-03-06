@@ -10,7 +10,14 @@ const getDateTimeStamp = () => {
 };
 
 app.get('/', (req, res) => {
-  res.json(`${getDateTimeStamp()} docker is easy`);
+  res.status(200).json(`${getDateTimeStamp()} docker is easy`);
+});
+
+app.get('/test', (req, res) => {
+  res.status(200).json({
+    dateTime: getDateTimeStamp(),
+    service: 'emi-service',
+  });
 });
 
 app.listen(PORT, () => {
