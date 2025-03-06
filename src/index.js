@@ -1,9 +1,9 @@
 const express = require('express');
 const app = express();
-const dotenv = require('dotenv');
-dotenv.config();
+//const dotenv = require('dotenv');
+//dotenv.config();
 
-const PORT = process.env.PORT || 8080;
+const PORT = 80;
 
 const getDateTimeStamp = () => {
   return new Date().toISOString();
@@ -21,7 +21,6 @@ app.get('/test', (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.info(process.env.APP_NAME);
   console.info(`http://localhost:${PORT}/`);
   console.info(`${getDateTimeStamp()} server started on ${PORT}`);
 });
